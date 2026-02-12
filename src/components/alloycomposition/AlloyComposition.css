@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;600;700&family=Bree+Serif&display=swap");
+
+:root {
+  --alloy-bg: #f7f3ec;
+  --alloy-card: #ffffff;
+  --alloy-text: #2b2a28;
+  --alloy-accent: #c07a2b;
+  --alloy-accent-strong: #a55c15;
+  --alloy-accent-soft: #f6d7b3;
+  --alloy-border: #e4d8c6;
+  --alloy-error: #b53a3a;
+  --alloy-shadow: 0 18px 40px rgba(68, 46, 16, 0.14);
+}
+
+.alloy-composition {
+  background:
+    radial-gradient(circle at top right, rgba(244, 212, 170, 0.6), transparent 45%),
+    radial-gradient(circle at 10% 20%, rgba(210, 168, 109, 0.25), transparent 35%),
+    linear-gradient(135deg, #f7f3ec 0%, #efe5d6 50%, #f8f0e4 100%);
+  color: var(--alloy-text);
+  padding: 32px 20px 48px;
+  border-radius: 24px;
+  box-shadow: var(--alloy-shadow);
+  font-family: "Alegreya Sans", "Trebuchet MS", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.alloy-composition::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.35), transparent 55%);
+  pointer-events: none;
+}
+
+.alloy-composition header {
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.alloy-composition .eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  margin: 0 0 8px;
+  color: #6e5a3b;
+}
+
+.alloy-composition h2 {
+  margin: 0 0 8px;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-family: "Bree Serif", "Georgia", serif;
+}
+
+.alloy-composition .subtitle {
+  margin: 0;
+  max-width: 520px;
+  color: #5c4c35;
+}
+
+.alloy-composition .content {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  align-items: start;
+}
+
+.alloy-composition .card {
+  background: var(--alloy-card);
+  padding: 20px;
+  border-radius: 18px;
+  border: 1px solid var(--alloy-border);
+  box-shadow: 0 10px 30px rgba(68, 46, 16, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.alloy-composition .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 35px rgba(68, 46, 16, 0.16);
+  border-color: rgba(192, 122, 43, 0.4);
+}
+
+.alloy-composition .field {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.alloy-composition label {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.alloy-composition input {
+  border-radius: 12px;
+  border: 1px solid var(--alloy-border);
+  padding: 10px 12px;
+  font-size: 1rem;
+  background: #fffaf3;
+  color: var(--alloy-text);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.alloy-composition input:focus,
+.alloy-composition input:focus-visible {
+  outline: 2px solid rgba(192, 122, 43, 0.35);
+  border-color: var(--alloy-accent-strong);
+  box-shadow: 0 0 0 4px rgba(192, 122, 43, 0.2);
+  background: #fff7eb;
+}
+
+.alloy-composition .hint {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #7c6b54;
+}
+
+.alloy-composition .submit {
+  border: none;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-size: 1rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #d08a3a, #b9671f);
+  color: #fffaf3;
+  cursor: pointer;
+  box-shadow: 0 12px 24px rgba(192, 122, 43, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.alloy-composition .submit:hover {
+  filter: brightness(1.05);
+  box-shadow: 0 16px 30px rgba(192, 122, 43, 0.3);
+  transform: translateY(-1px);
+}
+
+.alloy-composition .submit:active {
+  transform: translateY(1px);
+}
+
+.alloy-composition .result h3 {
+  margin: 0 0 12px;
+  font-family: "Bree Serif", "Georgia", serif;
+  font-size: 1.35rem;
+}
+
+.alloy-composition .result {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(192, 122, 43, 0.2);
+}
+
+.alloy-composition .result::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(208, 138, 58, 0.3), transparent 70%);
+  pointer-events: none;
+}
+
+.alloy-composition .value {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--alloy-accent-strong);
+  margin: 0 0 12px;
+}
+
+.alloy-composition .formula {
+  margin: 0 0 16px;
+  font-size: 0.9rem;
+  color: #5f4c33;
+}
+
+.alloy-composition .placeholder {
+  margin: 0 0 12px;
+  color: #6b5b44;
+}
+
+.alloy-composition .error {
+  margin: 0 0 12px;
+  color: var(--alloy-error);
+  font-weight: 600;
+}
+
+.alloy-composition .example {
+  background: linear-gradient(120deg, #fff4e3, #fff9f1);
+  border-radius: 14px;
+  padding: 12px;
+  border: 1px dashed #e4c9a3;
+}
+
+.alloy-composition .example-title {
+  margin: 0 0 6px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: #7c5a2d;
+}
+
+.alloy-composition .example-value {
+  margin: 0;
+  font-weight: 600;
+}
+
+@keyframes liftIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.alloy-composition .card,
+.alloy-composition header {
+  animation: liftIn 0.45s ease both;
+}
+
+@media (max-width: 640px) {
+  .alloy-composition {
+    padding: 24px 16px 32px;
+    border-radius: 18px;
+  }
+
+  .alloy-composition header {
+    margin-bottom: 18px;
+  }
+
+  .alloy-composition .content {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .alloy-composition .card {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .alloy-composition .field {
+    margin-bottom: 14px;
+  }
+
+  .alloy-composition input {
+    font-size: 1rem;
+  }
+
+  .alloy-composition .submit {
+    width: 100%;
+    padding: 12px 16px;
+  }
+
+  .alloy-composition .value {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .alloy-composition {
+    padding: 20px 14px 28px;
+  }
+
+  .alloy-composition h2 {
+    font-size: 1.6rem;
+  }
+
+  .alloy-composition .subtitle {
+    font-size: 0.95rem;
+  }
+}
